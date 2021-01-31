@@ -17,6 +17,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { InvitadosListComponent } from './invitados-list/invitados-list.component';
 import { RecepcionComponent } from './recepcion/recepcion.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 
 @NgModule({
@@ -39,7 +41,8 @@ import { RecepcionComponent } from './recepcion/recepcion.component';
     MatProgressBarModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
