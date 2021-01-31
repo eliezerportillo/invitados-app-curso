@@ -11,12 +11,21 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ShellComponent } from './shell/shell.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { InvitadosListComponent } from './invitados-list/invitados-list.component';
+import { RecepcionComponent } from './recepcion/recepcion.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    ShellComponent,
+    InvitadosListComponent,
+    RecepcionComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +33,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatInputModule,
     MatFormFieldModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatProgressBarModule,
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule

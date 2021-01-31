@@ -1,0 +1,20 @@
+.content {
+    min-height: 100vh;
+}
+
+.menu {
+    position: sticky;
+    bottom: 0;
+
+    height: 64px;
+
+    a {
+        span {
+            line-height: 24px;
+        }
+    }
+}
+
+.active-link {
+    color: orange;
+}
