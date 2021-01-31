@@ -1,22 +1,3 @@
-<!-- <form [formGroup]="form" (ngSubmit)="onLogin()">
-
-    <mat-form-field appearance="outline">
-        <mat-label>usuario</mat-label>
-        <input matInput formControlName="usuario">
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
-        <mat-label>usuario</mat-label>
-        <input matInput formControlName="contrasenia" type="password">
-    </mat-form-field>
-
-    <button mat-button>Entrar</button>
-
-</form>
-
-<button mat-raised-button>Entrar con Google</button>
-<button mat-raised-button>Entrar con Facebook</button> -->
-
 <div class="h-50 firebase-orange-color my-padding" >
     <form [formGroup]="form" (ngSubmit)="onLogin()" fxLayout="column" fxLayoutAlign="center stretch">
 
@@ -40,7 +21,7 @@
 </div>
 <div class="h-50 my-padding footer-container">
     <div fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="10px" fxFlex>
-        <button mat-raised-button class="firebase-blue-color text-white">Entrar con Google</button>
-        <button mat-raised-button class="firebase-pink-color text-white">Entrar con Facebook</button> 
+        <button mat-raised-button class="firebase-blue-color text-white" (click)="onLoginConGoogle()">Entrar con Google</button>
+        <button mat-raised-button class="firebase-pink-color text-white" (click)="onLoginConFacebook()">Entrar con Facebook</button> 
     </div>
 </div>
