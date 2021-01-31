@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import firebase from 'firebase/app'
 
 @Component({
   selector: 'app-login',
@@ -10,10 +13,13 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private auth: AngularFireAuth,
+    private router: Router,
+    private fb: FormBuilder) {
     this.form = this.fb.group({
-      usuario: ['elie', Validators.required],
-      contrasenia: ['asas', Validators.required]
+      usuario: ['', Validators.required],
+      contrasenia: ['', Validators.required]
     });
   }
 
@@ -30,7 +36,43 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
+    if (this.form.invalid) {
+      return;
+    }
 
+    this.auth
+      .signInWithEmailAndPassword(this.email, this.password)
+      .then(response => {
+        // ok
+        this.router.navigate(['invitados']);
+      }).catch(err => {
+
+        // fail
+        console.log(err.message);
+      });
+  }
+
+  onLoginConGoogle() {
+    this.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
+      .then(response => {
+        this.router.navigate(['invitados']);
+      }).catch(err => {
+
+        // fail
+        console.log(err.message);
+      });
+  }
+
+  onLoginConFacebook() {
+
+    this.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider())
+      .then(response => {
+        this.router.navigate(['invitados']);
+      }).catch(err => {
+
+        // fail
+        console.log(err.message);
+      });
   }
 
 }
