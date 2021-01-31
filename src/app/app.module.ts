@@ -18,6 +18,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { InvitadosListComponent } from './invitados-list/invitados-list.component';
 import { RecepcionComponent } from './recepcion/recepcion.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth'
+import { environment } from 'src/environments/environment';
 
 
 
@@ -42,7 +45,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
