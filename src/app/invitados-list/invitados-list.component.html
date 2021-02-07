@@ -1,1 +1,27 @@
-<p>invitados-list works!</p>
+<div fxLayout="column">
+
+    <div class="search" fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="8px">
+        <mat-form-field appearance="outline" fxFlex>
+            <mat-label>Filtrar</mat-label>
+            <input matInput [formControl]="filtro" placeholder="Nombre del invitado">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <button mat-flat-button color="accent" [routerLink]="['agregar']">
+            <mat-icon>add</mat-icon>
+        </button>
+    </div>
+
+    <div class="sin-invitados" *ngIf="sinInvitados" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="8px">
+        <mat-icon>people</mat-icon>
+        <span>Sin invitados</span>
+    </div>
+
+    <mat-nav-list class="invitados">
+        <mat-list-item *ngFor="let item of invitadosFiltrados | async" [routerLink]="item.id">
+            <span>{{item.nombre}}</span>
+            <span class="spacer"></span>
+            <mat-icon *ngIf="item.confirmado">done</mat-icon>
+        </mat-list-item>
+    </mat-nav-list>
+</div>

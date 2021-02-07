@@ -15,12 +15,17 @@ import { ShellComponent } from './shell/shell.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+
+
 import { InvitadosListComponent } from './invitados-list/invitados-list.component';
 import { RecepcionComponent } from './recepcion/recepcion.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth'
 import { environment } from 'src/environments/environment';
+import { MenuUsuarioComponent } from './menu-usuario/menu-usuario.component';
 
 
 
@@ -30,9 +35,10 @@ import { environment } from 'src/environments/environment';
     LoginComponent,
     ShellComponent,
     InvitadosListComponent,
-    RecepcionComponent
+    RecepcionComponent,
+    MenuUsuarioComponent
   ],
-  imports: [
+  imports: [ 
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -43,6 +49,8 @@ import { environment } from 'src/environments/environment';
     MatIconModule,
     MatProgressBarModule,
     MatButtonModule,
+    MatMenuModule,
+    MatListModule,
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,

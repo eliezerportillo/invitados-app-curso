@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { OnlySignedInUsersGuard } from './guards/only-signed-in-users.guard';
 import { InvitadosListComponent } from './invitados-list/invitados-list.component';
 import { LoginComponent } from './login/login.component';
 import { RecepcionComponent } from './recepcion/recepcion.component';
@@ -18,6 +19,7 @@ const routes: Routes = [
     data: {
       titulo: 'Invitados App'
     },
+    canActivate: [OnlySignedInUsersGuard],
     children: [
       {
         path: 'invitados',
